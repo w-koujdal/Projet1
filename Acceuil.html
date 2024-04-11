@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Web</title>
+    <link rel="stylesheet" href="Acceuil.css">
+</head>
+<body>
+        <header class="header">
+        <div class="logo">ReBorn</div>
+        <nav class="menu">
+            <ul>
+            <li><a href="Acceuil.html">Accueil</a></button></li>
+        <li><a href="Connexion_Inscription.html">Connexion/Inscription</a></button></li>
+        <li><a href="Achats.php">Achats</a></button></li>
+        <li><a href="A_propos.html">À propos</a></button></li>
+        <li><a href="mon-compte.php">Mon compte</a></li>
+       
+            </ul>
+        </nav>
+        
+
+
+            
+</form>
+
+
+
+
+
+        </div>
+    </header>
+    <br><br>
+
+    <!-- Bandeau noir avec titre et slide -->
+    <div class="black-banner">
+        <h1>Reborn</h1>
+        <div class="slideshow-container">
+    <div class="slide">
+      <img src="images/pc.png" alt="Image 1">
+    </div>
+
+    <div class="slide">
+      <img src="images\Ecran.jpg" alt="Image 2">
+    </div>
+
+    <div class="slide">
+      <img src="images/clavier.png" alt="Image 3">
+    </div>
+
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+  <br>
+    <strong><p>Donnez une seconde vie à vos appareils</p></strong></div>
+
+
+    <br>
+    <p>Voici les differents types d'appareils disponibles</p>
+ <div class="image-container">
+        <div class="image-box">
+            <img src="images/ecran.png" alt="Image 1">
+            <p>Ecran</p>
+        </div>
+        <div class="image-box">
+            <img src="images/smartphone.png" alt="Image 2">
+            Smartphone
+            <p></p>
+        </div>
+        <div class="image-box">
+            <img src="images/pc.png" alt="Image 3">
+            <p>PC portable</p>
+        </div>
+        <div class="image-box">
+            <img src="images/clavier.png" alt="Image 4">
+            <p>Calvier</p>
+        </div>
+    </div>
+
+    <div class="black-banner">
+        <h2>Contactez-nous</h2>
+        <p>Numéro de téléphone : 06 26 18 95 80</p>
+        <p>Adresse : 11 rue de Picardie, Argenteuil </p>
+        <p>Email : reborn@gmail.com</p>
+    </div>
+ <footer>
+    <p>&copy; 2023 ReBorn. Tous droits réservés.</p>
+  </footer>
+
+<script>
+    var slideIndex = 0;
+    showSlide(slideIndex);
+
+    function changeSlide(n) {
+      showSlide(slideIndex += n);
+    }
+
+    function showSlide(n) {
+      var slides = document.getElementsByClassName("slide");
+      
+      if (n >= slides.length) {
+        slideIndex = 0;
+      } else if (n < 0) {
+        slideIndex = slides.length - 1;
+      }
+
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slides[slideIndex].style.display = "block";
+    }
+  </script>
+</body>
+</html>

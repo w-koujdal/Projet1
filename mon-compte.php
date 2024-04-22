@@ -112,7 +112,7 @@
         <div class="logo">ReBorn</div>
         <nav class="menu">
             <ul>
-              <li><a href="Acceuil.html">Accueil</a></button></li>
+              <li><a href="Acceuil.php">Accueil</a></button></li>
         <li><a href="Connexion_Inscription.html">Connexion/Inscription</a></button></li>
         <li><a href="Achats.php">Achats</a></button></li>
         <li><a href="A_propos.html">À propos</a></button></li>
@@ -143,7 +143,7 @@
     </div>
 
     <div class="back-button">
-        <a href="Acceuil.html">Retour vers l'Accueil</a>
+        <a href="Acceuil.php">Retour vers l'Accueil</a>
     </div>
 
     <div class="back-button">

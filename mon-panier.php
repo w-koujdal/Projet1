@@ -3,24 +3,26 @@ session_start();
 
 function getImg($idproduit){
     // Connexion à la base de données
-$serveur = "localhost";
-$utilisateur = "root";
-$mot_de_passe = "L33u[6IM5~e";
-$base_de_donnees = "u967421408_KOUJDAL";
+    $serveur = "localhost";
+    $utilisateur = "root";
+    $mot_de_passe = "mysql";
+    $base_de_donnees = "reborn";
 
-$connexion = new mysqli($serveur, $utilisateur, $mot_de_passe, $base_de_donnees);
+    $connexion = new mysqli($serveur, $utilisateur, $mot_de_passe, $base_de_donnees);
 
-if ($connexion->connect_error) {
-    die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+    if ($connexion->connect_error) {
+        die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+    }
+
+    $req = "SELECT image_url FROM produits WHERE id = ?";
+    $statement = $connexion->prepare($req);
+    $statement->bind_param("s", $idproduit);
+    $statement->execute();
+    $resultat = $statement->get_result();
+    $produit = $resultat->fetch_assoc();
+    return $produit['image_url'];
 }
-$req = "select image_url from produits where id= ?";
-$statement = $connexion->prepare($req);
-$statement->bind_param("s", $idproduit);
-$statement->execute();
-$resultat = $statement->get_result();
- $produit = $resultat->fetch_assoc();
-return $produit['image_url'];
-}
+
 if (!isset($_SESSION['utilisateur_connecte'])) {
     header("Location: Connexion.html");
     exit;
@@ -146,7 +148,7 @@ if (isset($_SESSION['panier'])) {
             text-align: center;
             margin-top: 20px;
         }
-    
+
         </style>
     </head>
     <body>
@@ -154,7 +156,7 @@ if (isset($_SESSION['panier'])) {
             <div class="logo">ReBorn</div>
             <nav class="menu">
                 <ul>
-                    <li><a href="Acceuil.html">Accueil</a></li>
+                    <li><a href="Acceuil.php">Accueil</a></li>
                     <li><a href="Connexion_Inscription.html">Connexion/Inscription</a></li>
                     <li><a href="Achats.php">Achats</a></li>
                     <li><a href="A_propos.html">À propos</a></li>
@@ -166,30 +168,29 @@ if (isset($_SESSION['panier'])) {
             <h1>Mon Panier</h1>
             <div class="cart-items">';
 
+    foreach ($_SESSION['panier'] as $key => $product_info) {
+        echo '<div class="product">';
+        
+        $image_path =  getImg($product_info['id']);
 
-foreach ($_SESSION['panier'] as $key => $product_info) {
-    echo '<div class="product">';
-    
-    $image_path =  getImg($product_info['id']);
+        echo '<img src="' . $image_path . '" alt="' . $product_info['nom'] . '">';
+        echo '<div class="product-content">';
+        echo '<h2>' . $product_info['nom'] . '</h2>';
+        echo '<p>Prix : ' . $product_info['prix'] . ' EUR</p>';
+        echo '<p>Quantité : ' . $product_info['quantite'] . '</p>';
+        echo '<a class="remove-button" href="supprimer_du_panier.php?produit_id=' . $product_info['id'] . '">Supprimer du panier</a>';
+        echo '</div>';
+        echo '</div>';
+    }
 
-    echo '<img src="' . $image_path . '" alt="' . $product_info['nom'] . '">';
-    echo '<div class="product-content">';
-    echo '<h2>' . $product_info['nom'] . '</h2>';
-    echo '<p>Prix : ' . $product_info['prix'] . ' EUR</p>';
-    echo '<p>Quantité : ' . $product_info['quantite'] . '</p>';
-                        echo '<a class="remove-button" href="supprimer_du_panier.php?produit_id=' . $product_info['id'] . '">Supprimer du panier</a>';
-
-    echo '</div>';
-    echo '</div>';
-}
-
-    echo '<a class="payment-button" href="Payement.html">Paiement</a>';
+    echo '<form action="Payement.php" method="post">';
+    echo '<button type="submit" class="payment-button">Paiement</button>';
+    echo '</form>';
     echo '</div>';
 
 } else {
     echo 'Aucun produit trouvé dans votre panier.';
 }
-
 ?>
 </body>
 </html>

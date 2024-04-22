@@ -5,9 +5,9 @@ error_reporting(E_ALL);
 session_start();
 
 $serveur = "localhost";
-$utilisateur = "u967421408_KOUJDAL";
-$mot_de_passe = "L33u[6IM5~e";
-$base_de_donnees = "u967421408_KOUJDAL";
+$utilisateur = "root";
+$mot_de_passe = "mysql";
+$base_de_donnees = "reborn";
 
 $connexion = new mysqli($serveur, $utilisateur, $mot_de_passe, $base_de_donnees);
 

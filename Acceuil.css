@@ -1,6 +1,13 @@
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    margin-top: 2rem;
+    padding: 0; 
     font-family: Arial, sans-serif;
 }
 
@@ -8,6 +15,7 @@ p {
     text-align: center;
 }
 
+/*Barre de navigation) */
 .header {
     position: fixed;
     top: 0;
@@ -26,12 +34,11 @@ p {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    width: 33%;
+    width: 39%;
 }
 
-
-.menu{
-    width: 33%;
+.menu {
+    width: 39%;
 }
 
 .menu ul {
@@ -56,44 +63,12 @@ p {
     font-size: 16px;
 }
 
-.search{
-    width: 33%;
-    display: flex;
-    justify-content: end;
-}
-
-.search input[type="text"] {
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    margin-right: 10px;
-    width: 200px;
-}
-
-.search button {
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.search button:hover {
-    background-color: #0056b3;
-}
-
-
-
-/* Réinitialisation des styles par défaut */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Styles pour le bandeau noir */
 .black-banner {
     background-color: black;
     color: white;
@@ -101,54 +76,31 @@ p {
     padding: 20px;
 }
 
-/* Styles pour le titre */
 h1, h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
- .slideshow-container {
-      position: relative;
-      max-width: 800px;
-      margin: auto;
-    }
+.slideshow-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-    .slide {
-      display: none;
-    }
+.mySlides {
+    display: none;
+    width: 100%;
+}
 
-    .slide img {
-      width: 100%;
-      height: auto;
-    }
+img {
+    width: 100%;
+}
 
-    .prev,
-    .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 24px;
-      font-weight: bold;
-      padding: 10px;
-      color: #fff;
-      background-color: rgba(0, 0, 0, 0.5);
-      cursor: pointer;
-    }
-
-    .prev {
-      left: 0;
-    }
-
-    .next {
-      right: 0;
-    }
-
-/* Styles pour les images et les descriptions */
 .image-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 800px; /* Ajustez la largeur maximale selon vos besoins */
+    max-width: 800px; 
     margin: 0 auto;
 }
 
@@ -170,13 +122,12 @@ h1, h2 {
     font-size: 14px;
 }
 
-
-/* Styles pour le texte en dessous des images */
 .image-box p {
     font-size: 14px;
 }
 
-/* Styles pour le pied de page */
+
+
 footer {
     background-color: #333;
     color: white;

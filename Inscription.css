@@ -5,7 +5,6 @@ body {
     background-color: #f5f5f5;
 }
 
-
 .header {
     position: fixed;
     top: 0;
@@ -27,11 +26,11 @@ body {
     width: 33%;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
-.menu{
+.menu {
     width: 37%;
 }
 
@@ -57,25 +56,54 @@ h2{
     font-size: 16px;
 }
 
-
-
-
-
-
 .form-container {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
-    max-width: 400px; 
-    margin: 0 auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    max-width: 400px;
+    margin: 80px auto; /* Ajustement pour le centrage vertical */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .form-container form {
     text-align: center;
 }
 
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; /* Espacement entre les boutons */
+}
+
+.form-container button:hover {
+    background-color: #555;
+}
+
+.form-container button[type="submit"] {
+    background-color: #28a745; /* Couleur verte pour le bouton Soumettre */
+    margin-right: 0; /* Ajustement pour le dernier bouton */
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: #218838;
+}
 
 footer {
     position: fixed;

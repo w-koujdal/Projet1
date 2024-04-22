@@ -1,32 +1,43 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>connexion/Inscription</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Web</title>
+   <link rel="stylesheet" href="Inscription.css">
 </head>
 <body>
-<header>
-    <nav>
-      <ul>
-        <li><button class="btn"> <a href="Acceuil.html">Accueil</a></button></li>
-        <li><button class="btn"> <a href="Connexion/Inscription.html">Connexion/Inscription</a></button></li>
-        <li><button class="btn"> <a href="Apropos.html">À propos</a></button></li>
-        <li><button class="btn"> <a href="Contact">Contact</a></button></li>
-        <div class="search-container">
-            <input type="text" id="search" placeholder="Rechercher...">
-            <button type="submit">Rechercher</button>
-        </div>
-      </ul>
-    </nav>
-  </header>
-  <h2>Inscription</h2>
-    <form action="traitement_inscription.php" method="post">
+   <header class="header">
+        <div class="logo">ReBorn</div>
+        <nav class="menu">
+            <ul>
+            <li><a href="Acceuil.php">Accueil</a></button></li>
+        <li><a href="Connexion_Inscription.html">Connexion/Inscription</a></button></li>
+        <li><a href="Achats.php">Achats</a></button></li>
+        <li><a href="A_propos.html">À propos</a></button></li>
+        <li><a href="mon-compte.php">Mon compte</a></li>
+       
+            </ul>
+        </nav>
+        
+    </header>
+    <br><br>
+
+<h2>Inscription</h2>
+   
+    <!-- Encadrement blanc pour le formulaire -->
+    <div class="form-container">
+         <form action="traitement_inscription.php" method="post">
         <label for="nom">Nom :</label>
         <input type="text" name="nom" required><br>
         
         <label for="prenom">Prénom :</label>
         <input type="text" name="prenom" required><br>
+
+        <label for="numero_telephone">Téléphone :</label>
+        <input type="tel" id="telephone" name="telephone" required>
+        <br>
         
         <label for="email">Email :</label>
         <input type="email" name="email" required><br>
@@ -37,5 +48,13 @@
         <input type="submit" value="S'inscrire">
     </form>
   
+    </div>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <p>&copy; 2023 ReBorn. Tous droits réservés.</p>
+    </footer>
+
+   
 </body>
 </html>

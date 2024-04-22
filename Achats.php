@@ -123,7 +123,7 @@
         <div class="logo">ReBorn</div>
         <nav class="menu">
             <ul>
-                <li><a href="Acceuil.html">Accueil</a></li>
+                <li><a href="Acceuil.php">Accueil</a></li>
                 <li><a href="Connexion_Inscription.html">Connexion/Inscription</a></li>
                 <li><a href="A_propos.html">À propos</a></li>
                 <li><a href="mon-compte.php">Mon compte</a></li>
@@ -171,6 +171,7 @@
             }
         }
 
+
         $sql = 'SELECT * FROM produits';
 
         $result = mysqli_query($connexion, $sql);
@@ -204,7 +205,6 @@
     </div>
 
     <script>
-        // Affiche la notification pendant 3 secondes après l'ajout au panier
         document.addEventListener('DOMContentLoaded', function () {
             var notification = document.querySelector('.notification');
             if (notification) {

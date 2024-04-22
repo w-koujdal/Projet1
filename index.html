@@ -13,6 +13,38 @@
             flex-wrap: wrap;
         }
 
+        .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 800px; /* Ajustez la largeur maximale selon vos besoins */
+    margin: 0 auto;
+}
+
+.image-box {
+    flex: 1;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.image-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-box p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+/* Styles pour le texte en dessous des images */
+.image-box p {
+    font-size: 14px;
+}
+
         .product {
             text-align: center;
             max-width: 200px; 
@@ -72,43 +104,24 @@
     </div>
 
     <div class="top-selling-section">
-        <?php
-        $serveur = "localhost";
-        $utilisateur = "root";
-        $mot_de_passe = "mysql";
-        $base_de_donnees = "reborn";
-
-        $connexion = new mysqli($serveur, $utilisateur, $mot_de_passe, $base_de_donnees);
-
-        if ($connexion->connect_error) {
-            die("La connexion à la base de données a échoué : " . $connexion->connect_error);
-        }
-
-        $sql_top_selling = "SELECT id, nom, description, prix, quantite, image_url, date_ajout, categorie, nombre_ventes
-                            FROM produits
-                            ORDER BY nombre_ventes DESC
-                            LIMIT 3";
-
-        $result_top_selling = mysqli_query($connexion, $sql_top_selling);
-
-        if ($result_top_selling && mysqli_num_rows($result_top_selling) > 0) {
-            echo '<h2>Les produits les plus vendus</h2>';
-            echo '<div class="top-selling-products">';
-
-            while ($row = mysqli_fetch_assoc($result_top_selling)) {
-                echo '<div class="product">';
-                echo '<img class="top-selling-image" src="' . $row['image_url'] . '" alt="' . $row['nom'] . '">';
-                echo '<h3>' . $row['nom'] . '</h3>';
-                echo '<p>Description : ' . $row['description'] . '</p>';
-                echo '<p>Prix : ' . $row['prix'] . ' EUR</p>';
-                echo '</div>';
-            }
-
-            echo '</div>';
-        } else {
-            echo 'Aucun produit le plus vendu trouvé.';
-        }
-        ?>
+        <div class="image-container">
+            <div class="image-box">
+                <img src="ecran.png" alt="Image 1">
+                <p>Ecran</p>
+            </div>
+            <div class="image-box">
+                <img src="smartphone.png" alt="Image 2">
+                <p>Smartphone</p>
+            </div>
+            <div class="image-box">
+                <img src="pc.png" alt="Image 3">
+                <p>Description de l'image 3</p>
+            </div>
+            <div class="image-box">
+                <img src="clavier.png" alt="Image 4">
+                <p>clavier</p>
+            </div>
+        </div>
     </div>
 
     <div class="black-banner">

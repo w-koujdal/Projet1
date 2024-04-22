@@ -1,19 +1,11 @@
 L'entreprise ReBorn veut son site web e-commerce? essentillements des smartphones pc portable et clavier souris.
 
-Avancement des pages:
 
-Accueil.html
-conexion/inscription.html
-listes des produits.html
-a propos.html
-
-A finaliser:
-
-mon compte.html
-panier.html
-merci de votre achat.html
-
-A faire:
-payement.html
-panier.php
-reorganisation de la base de données concernant le panier et l'ouverture de session.
+Acceuil
+page connexion inscription
+inscription
+connexion
+Liste des produits
+A propos 
+Conctact
+Mon compte
